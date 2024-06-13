@@ -34,4 +34,16 @@ void Engine::input()
 			}
 		}
 	}
+
+	// Handle input specific to thomas
+	if (m_Thomas.handleInput())
+	{
+		// Play jump sound
+	}
+
+	// Handle input specific to bob
+	if (m_Bob.handleInput())
+	{
+		// Play jump sound
+	}
 }

@@ -15,6 +15,12 @@ void Engine::draw()
 
 		// Switch to the main view
 		m_Window.setView(m_MainView);
+
+		// Draw thomas
+		m_Window.draw(m_Thomas.getSprite());
+
+		// Draw bob
+		m_Window.draw(m_Bob.getSprite());
 	}
 	else
 	{
@@ -28,10 +34,21 @@ void Engine::draw()
 		// Switch to the left view
 		m_Window.setView(m_LeftView);
 
+		// Draw bob
+		m_Window.draw(m_Bob.getSprite());
+
+		// Draw thomas
+		m_Window.draw(m_Thomas.getSprite());
+
 		// draw bob's side of screen
 		m_Window.setView(m_BGRightView);
 		m_Window.draw(m_BackgroundSprite);
 		m_Window.setView(m_RightView);
+
+		// Draw thomas
+		m_Window.draw(m_Thomas.getSprite());
+		// Draw Bob
+		m_Window.draw(m_Bob.getSprite());
 
 	}
 
