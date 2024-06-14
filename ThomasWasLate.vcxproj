@@ -144,6 +144,7 @@
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="LevelManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PlayableCharacter.cpp" />
     <ClCompile Include="Thomas.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="..\Zombie Arena\TextureHolder.h" />
     <ClInclude Include="Bob.h" />
     <ClInclude Include="Engine.h" />
+    <ClInclude Include="LevelManager.h" />
     <ClInclude Include="PlayableCharacter.h" />
     <ClInclude Include="Thomas.h" />
   </ItemGroup>
