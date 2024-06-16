@@ -18,11 +18,17 @@ Engine::Engine()
 	m_BGLeftView.setViewport(FloatRect(0.001f, 0.001f, 0.498f, 0.998f));
 	m_BGRightView.setViewport(FloatRect(0.5f, 0.001f, 0.499f, 0.998f));
 
+	if (!Shader::isAvailable()) {
+		m_Window.close();
+	}
+
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/Background.png");
 
 	// Associate sprite with texture
 	m_BackgroundSprite.setTexture(m_BackgroundTexture);
 
+	// load texture for the background vertex array
+	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
 }
 
 void Engine::run()

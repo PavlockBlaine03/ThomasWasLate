@@ -16,6 +16,9 @@ void Engine::draw()
 		// Switch to the main view
 		m_Window.setView(m_MainView);
 
+		// draw the level
+		m_Window.draw(m_VaLevel, &m_TextureTiles);
+
 		// Draw thomas
 		m_Window.draw(m_Thomas.getSprite());
 
@@ -34,6 +37,9 @@ void Engine::draw()
 		// Switch to the left view
 		m_Window.setView(m_LeftView);
 
+		// draw the level
+		m_Window.draw(m_VaLevel, &m_TextureTiles);
+
 		// Draw bob
 		m_Window.draw(m_Bob.getSprite());
 
@@ -44,6 +50,9 @@ void Engine::draw()
 		m_Window.setView(m_BGRightView);
 		m_Window.draw(m_BackgroundSprite);
 		m_Window.setView(m_RightView);
+
+		// draw the level
+		m_Window.draw(m_VaLevel, &m_TextureTiles);
 
 		// Draw thomas
 		m_Window.draw(m_Thomas.getSprite());

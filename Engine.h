@@ -3,6 +3,7 @@
 #include "TextureHolder.h"
 #include "Thomas.h"
 #include "Bob.h"
+#include "LevelManager.h"
 using namespace sf;
 
 class Engine
@@ -11,6 +12,9 @@ class Engine
 
 	Thomas m_Thomas;
 	Bob m_Bob;
+
+	// manage all levels
+	LevelManager m_LM;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
@@ -52,10 +56,19 @@ class Engine
 	// is it time for a new/first level?
 	bool m_NewLevelRequired = true;
 
+	// the vertex array for level tiles
+	VertexArray m_VaLevel;
+	// The 2d array with the map for the level
+	int** m_ArrayLevel = NULL;
+	Texture m_TextureTiles;
+
 	//Private functions for internal use only
 	void input();
 	void update(float dtAsSeconds);
 	void draw();
+
+	// load new level
+	void loadLevel();
 
 public:
 
