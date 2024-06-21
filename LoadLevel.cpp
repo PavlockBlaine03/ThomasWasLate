@@ -11,6 +11,9 @@ void Engine::loadLevel()
 
 	m_ArrayLevel = m_LM.nextLevel(m_VaLevel);
 
+	// Prepare sound emitters
+	populateEmitters(m_FireEmitters, m_ArrayLevel);
+
 	// How long is this new time limit
 	m_TimeRemaining = m_LM.getTimeLimit();
 
