@@ -48,6 +48,9 @@
     <ClCompile Include="LoadLevel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DectectCollisions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Zombie Arena\TextureHolder.h">

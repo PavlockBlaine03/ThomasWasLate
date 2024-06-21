@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="..\Zombie Arena\TextureHolder.cpp" />
     <ClCompile Include="Bob.cpp" />
+    <ClCompile Include="DectectCollisions.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Input.cpp" />

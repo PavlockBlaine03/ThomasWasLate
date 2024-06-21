@@ -69,6 +69,7 @@ class Engine
 
 	// load new level
 	void loadLevel();
+	bool detectCollisions(PlayableCharacter& character);
 
 public:
 
