@@ -5,6 +5,7 @@
 #include "Bob.h"
 #include "LevelManager.h"
 #include "SoundManager.h"
+#include "Hud.h"
 using namespace sf;
 
 class Engine
@@ -19,6 +20,11 @@ class Engine
 
 	// Create Sound Manager
 	SoundManager m_SM;
+
+	// The Hud
+	Hud m_Hud;
+	int m_FramesSinceLastHUDUpdate = 0;
+	int m_TargetFramesPerHUDUpate = 500;
 
 	const int TILE_SIZE = 50;
 	const int VERTS_IN_QUAD = 4;
