@@ -2,16 +2,18 @@
 
 void Engine::draw()
 {
-	// Rub out the last frame
 	m_Window.clear(Color::White);
+
+	// Update the shader parameters
+	m_RippleShader.setUniform("uTime", m_GameTimeTotal.asSeconds());
 
 	if (!m_SplitScreen)
 	{
 		// Switch background view
 		m_Window.setView(m_BGMainView);
 
-		// Draw the background
-		m_Window.draw(m_BackgroundSprite);
+		// Draw background with shader effect
+		m_Window.draw(m_BackgroundSprite, &m_RippleShader);
 
 		// Switch to the main view
 		m_Window.setView(m_MainView);
@@ -24,6 +26,8 @@ void Engine::draw()
 
 		// Draw bob
 		m_Window.draw(m_Bob.getSprite());
+
+		if (m_PS.running()) m_Window.draw(m_PS);
 	}
 	else
 	{
@@ -33,7 +37,8 @@ void Engine::draw()
 		*/
 		m_Window.setView(m_BGLeftView);
 		// Draw the background
-		m_Window.draw(m_BackgroundSprite);
+		m_Window.draw(m_BackgroundSprite, &m_RippleShader);
+		
 		// Switch to the left view
 		m_Window.setView(m_LeftView);
 
@@ -46,9 +51,11 @@ void Engine::draw()
 		// Draw thomas
 		m_Window.draw(m_Thomas.getSprite());
 
+		if (m_PS.running()) m_Window.draw(m_PS);
+
 		// draw bob's side of screen
 		m_Window.setView(m_BGRightView);
-		m_Window.draw(m_BackgroundSprite);
+		m_Window.draw(m_BackgroundSprite, &m_RippleShader);
 		m_Window.setView(m_RightView);
 
 		// draw the level
@@ -58,6 +65,8 @@ void Engine::draw()
 		m_Window.draw(m_Thomas.getSprite());
 		// Draw Bob
 		m_Window.draw(m_Bob.getSprite());
+
+		if (m_PS.running()) m_Window.draw(m_PS);
 
 	}
 

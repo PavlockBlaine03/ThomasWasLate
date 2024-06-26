@@ -21,6 +21,10 @@ Engine::Engine()
 	if (!Shader::isAvailable()) {
 		m_Window.close();
 	}
+	else
+	{
+		m_RippleShader.loadFromFile("shaders/vertShader.vert", "shaders/rippleShader.frag");
+	}
 
 	m_BackgroundTexture = TextureHolder::GetTexture("graphics/Background.png");
 
@@ -29,6 +33,8 @@ Engine::Engine()
 
 	// load texture for the background vertex array
 	m_TextureTiles = TextureHolder::GetTexture("graphics/tiles_sheet.png");
+
+	m_PS.init(1000);
 }
 
 void Engine::run()

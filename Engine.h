@@ -4,6 +4,7 @@
 #include "Thomas.h"
 #include "Bob.h"
 #include "LevelManager.h"
+#include "ParticleSystem.h"
 #include "SoundManager.h"
 #include "Hud.h"
 using namespace sf;
@@ -11,6 +12,8 @@ using namespace sf;
 class Engine
 {
 	TextureHolder th;
+
+	ParticleSystem m_PS;
 
 	Thomas m_Thomas;
 	Bob m_Bob;
@@ -49,6 +52,8 @@ class Engine
 	// Declare a sprite texture for background
 	Sprite m_BackgroundSprite;
 	Texture m_BackgroundTexture;
+
+	Shader m_RippleShader;
 
 	// is the game playing?
 	bool m_Playing = false;
